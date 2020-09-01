@@ -1,0 +1,205 @@
+//Бирюкова Екатерина
+LAB1
+package ru.mirea.lab1;
+import java.util.Scanner;
+public class Lab1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] a = new int[10];
+        int sum = 0;
+        for (int i = 0; i < 10; i++) {
+            a[i] = sc.nextInt();
+            sum += a[i];
+        }
+        System.out.println(sum);
+        sum = 0;
+        int i = 0;
+        while (i < 10) {
+            sum += a[i];
+            i++;
+        }
+        System.out.println(sum);
+        sum = 0;
+        i = 0;
+        do {
+            sum += a[i];
+            i++;
+        } while (i < 10);
+        System.out.println(sum);
+        for (int j = 0; j < args.length; j++) {
+            System.out.println(args[j]);
+        }
+        for (int j = 1; j < 11; j++) {
+            System.out.print((double) 1 / j + " ");
+        }
+        System.out.println();
+        for (int j = 0; j < 10; j++) {
+            a[j] = (int) ((int) 1 + Math.random() * 100);
+            System.out.print(a[j] + " ");
+        }
+        for (int j = 9; j >= 1; j--) {
+            for (int k = 0; k < j; k++) {
+                if (a[k] > a[k + 1]) {
+                    int tmp = a[k];
+                    a[k] = a[k + 1];
+                    a[k + 1] = tmp;
+                }
+            }
+        }
+
+        System.out.println();
+        for (int j = 0; j < 10; j++) {
+            System.out.print(a[j] + " ");
+        }
+        System.out.println();
+        int num= sc.nextInt();
+
+        System.out.println(fact(num));
+
+    }
+    public static int fact(int num)
+    {
+        int res=1;
+        for(int j=1;j<=num;j++) {
+            res=res*j;
+        }
+        return res;
+    }
+}
+
+PRACTIC1
+package ru.mirea.lab1;
+
+public class main {
+    public static void main(String[] args){
+        Dog Rex = new Dog("Rex",5, "Dvornyaga");
+        Ball ball = new Ball(5.0, "black");
+        Book Asya = new Book("Asya", "Turgenev");
+        System.out.println(Rex);
+        System.out.println(ball);
+        System.out.println(Asya);
+
+    }
+}
+
+
+package ru.mirea.lab1;
+public class Dog {
+    private String name;
+    private int age;
+    private String breed;
+    public Dog(){
+        name = "";
+        age=0;
+        breed = "";
+    }
+    public Dog(String name, int age, String breed){
+        this.name=name;
+        this.age=age;
+        this.breed=breed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String toString(){
+        return "Dog name: " + name + " age: "+age + " breed: " + breed;
+    }
+}
+
+
+package ru.mirea.lab1;
+
+public class Ball {
+    private double radius;
+    private String color;
+    public Ball(){
+        radius=0;
+        color= "";
+
+    }
+    public Ball(double radius, String color){
+        this.radius=radius;
+        this.color=color;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String toString(){
+        return "Ball radius: " + radius + " color: "+color;
+    }
+}
+
+
+package ru.mirea.lab1;
+
+public class Book {
+    private String name;
+    private String author;
+    public Book(){
+        name = "";
+        author = "";
+
+    }
+    public Book(String name, String author){
+        this.name=name;
+        this.author=author;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String toString(){
+        return "Book name: " + name + " author: "+author;
+    }
+}
+
+
